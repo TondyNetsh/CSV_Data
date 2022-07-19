@@ -214,12 +214,14 @@ public class SampleData {
     }
 
     public String[] creditScore(int number) {
-        String[] creditScr = new String[number];
+        String[] givenValues={"0","10","450","550","650","750"};
+        String[] creditScore = new String[number];
 
-        for (int i = 0; i < number; i++) {
-
+        for (int i=0; i < number; i++){
+            int index = (int)(Math.random()*(givenValues.length-1));
+            creditScore[i] = givenValues[index];
         }
-        return null;
+        return creditScore;
     }
     public String[] qualifiedIncomeInd(int number)
     {

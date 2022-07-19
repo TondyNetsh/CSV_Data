@@ -47,6 +47,7 @@ public class SaveData {
             String[] policyException = data.policyException(recordsNumber,loanAmount);
             String[] ltv = data.ltv(recordsNumber);
             String[] downPaymentSource = data.downPaymentSource(recordsNumber);
+            Stri
 
             String[][] records = {transactionType,productType,programType,occupanctType,equityTakeOutAmount,varianceExceptionReceived,cityName,postalCode,fsa,dwellingType,approvedLendingAreas,loanAmount,policyException,ltv,downPaymentSource};
             int row = 15, column = recordsNumber;
