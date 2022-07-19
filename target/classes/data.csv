@@ -1,0 +1,6 @@
+"transactionType","productType","programType","occupanctType","equityTakeOutAmount","varianceExceptionReceived","cityName","provinceCode","postalCode","fsa","dwellingType","approvedLendingAreas","loanAmount","policyExceptionPpolicyExceptionPolicyExceptionReceivedolicy","ltv","downPaymentSource","creditScore","primaryApplicantInd","gds","tds","qualifiedIncomeInd","totalIncome","residencyType","areaName","purchasePrice","amortazationTermsInYears","previouslyInsure","propertyOwnershipType","baseAmount"
+"Purchase","Prime","Standard","Rental","1168511818","Bodeville","M2N 5S6","K6V","Fourplex"
+"Refinance","Alternative","NewToCanada","OwnerOccupiedPlusRental","95979","Lynwoodhaven","M2N 6H4","J5R","ModularHomeDetached"
+"Refinance","Alternative","BFSAssist","OwnerOccupied","51988","Port Judeshire","M2N 1D6","T8L","Fourplex"
+"Purchase","Alternative","BFSAssist","OwnerOccupiedPlusRental","1349031475","Lake Cathrynstad","M2N 6Q0","K6V","Detached"
+"Transfer","Prime","BFSAssist","OwnerOccupied","200000","Deonside","M2N 4C3","T8L","Detached"
