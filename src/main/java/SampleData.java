@@ -78,8 +78,12 @@ public class SampleData {
 
         for (int i = 0; i < number; i++) {
             index = (int) (Math.random() * 2);
-            if (equity[i].equals("Received")) {
-                varienceException[i] = equity[index];
+            int equityAmt = Integer.parseInt(equity[i]);
+            if (equityAmt > 200000) {
+                varienceException[i] = "Received";
+            }
+            else {
+                varienceException[i] = "Not Received";
             }
         }
         return varienceException;
@@ -160,18 +164,40 @@ public class SampleData {
 
     public String[] loanAmount(int number) {
         String[] loanAmount = new String[number];
-        int amount = (int) Math.random();
-
+        int amount = ((int) (Math.random()*(2500000 - 100000))) + 100000;
+        System.out.println(amount);
         for (int i = 0; i < number; i++) {
             loanAmount[i] = String.valueOf(amount);
         }
         return loanAmount;
     }
 
-//    public String[] policyException(int number, String[] loanAmount) {
-//        String[] policyException = new String[number];
-//
-//    }
+    public String[] policyException(int number, String[] loanAmount) {
+        String[] policyException = new String[number];
+        int loanAmt = 0;
+
+        for (int i = 0; i < number; i++) {
+            loanAmt = Integer.parseInt(loanAmount[i]);
+            if (loanAmt > 2500000) {
+                policyException[i] = "Received";
+            }
+            else {
+                policyException[i] = "Not Received";
+            }
+        }
+        return policyException;
+    }
+
+    public String[] ltv(int number) {
+        String[] ltv = new String[number];
+        double[] ltvValues = {80,65,75,80,65,75,60,90,95,95.0};
+
+        for (int i = 0; i < number; i++) {
+            index = (int) (Math.random() * 10);
+            ltv[i] = String.valueOf(ltvValues[index] / 100);
+        }
+        return ltv;
+    }
 
     public String[] downPaymentSource(int number)
     {
@@ -187,6 +213,14 @@ public class SampleData {
         return downPayment;
     }
 
+    public String[] creditScore(int number) {
+        String[] creditScr = new String[number];
+
+        for (int i = 0; i < number; i++) {
+
+        }
+        return null;
+    }
     public String[] qualifiedIncomeInd(int number)
     {
         String[] qualifiedIncome = {"Qualified","Not Qualified"};
@@ -226,16 +260,14 @@ public class SampleData {
         return area;
     }
 
-    public String[] previouslyInsure(int number)
+    public String[] previouslyInsure(int number,String[] transactionType,String[] productType)
     {
         String[] insure = {"Previously Insured","Not Previously Insured"};
         String[] insurers= new String[number];
 
         for (int i = 0; i < number; i++) {
-            index = (int) (Math.random() * 2);
-            insurers[i] = insure[index];
+            if(transactionType[])
         }
-
         return insurers;
     }
 
@@ -248,7 +280,6 @@ public class SampleData {
             index = (int) (Math.random() * 2);
             OwnershipTypes[i] = OwnershipType[index];
         }
-
         return OwnershipTypes;
     }
 }

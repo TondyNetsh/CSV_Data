@@ -36,15 +36,20 @@ public class SaveData {
             String[] programType = data.programType(recordsNumber);
             String[] occupanctType = data.occupanctType(recordsNumber);
             String[] equityTakeOutAmount = data.equityTakeOutAmount(recordsNumber,transactionType);
+            String[] varianceExceptionReceived = data.varianceExceptionReceived(recordsNumber,equityTakeOutAmount);
             String[] cityName = data.cityName(recordsNumber);
 
             String[] postalCode = data.postalCode(recordsNumber);
             String[] fsa = data.fsa(recordsNumber);
             String[] dwellingType = data.dwellingType(recordsNumber);
             String[] approvedLendingAreas = data.approvedLendingAreas(recordsNumber);
+            String[] loanAmount = data.loanAmount(recordsNumber);
+            String[] policyException = data.policyException(recordsNumber,loanAmount);
+            String[] ltv = data.ltv(recordsNumber);
+            String[] downPaymentSource = data.downPaymentSource(recordsNumber);
 
-            String[][] records = {transactionType,productType,programType,occupanctType,equityTakeOutAmount,cityName,postalCode,fsa,dwellingType,approvedLendingAreas};
-            int row = 10, column = recordsNumber;
+            String[][] records = {transactionType,productType,programType,occupanctType,equityTakeOutAmount,varianceExceptionReceived,cityName,postalCode,fsa,dwellingType,approvedLendingAreas,loanAmount,policyException,ltv,downPaymentSource};
+            int row = 15, column = recordsNumber;
             String[][] transpose = new String[column][row];
 
             for (int i = 0; i < row; i++) {
