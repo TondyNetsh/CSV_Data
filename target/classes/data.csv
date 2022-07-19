@@ -1,7 +1,0 @@
-"transactionType","productType","programType","occupanctType","equityTakeOutAmount","varianceExceptionReceived","cityName","provinceCode","postalCode","fsa","dwellingType","approvedLendingAreas","loanAmount","policyExceptionPpolicyExceptionPolicyExceptionReceivedolicy","ltv","downPaymentSource","creditScore","primaryApplicantInd","gds","tds","qualifiedIncomeInd","totalIncome","residencyType","areaName","purchasePrice","amortazationTermsInYears","previouslyInsure","propertyOwnershipType","baseAmount"
-"Refinance","Alternative","BFSAssist","Rental","99665","Hicklechester","M2N 6H5","M2N","FourPlexSemiDetached","Medium","584748","Not Received","0.65","BorrowedAgainstLiquidAssets"
-"Transfer","Prime","NewToCanada","Rental","200000","Walshside","M2N 1Y3","T8L","Stacked","Medium","584748","Not Received","0.6","SweatEquity"
-"Refinance","Alternative","Rental","OwnerOccupiedPlusRental","20719","South Aurelio","M2N 6T7","M2N","DuplexSemiDetached","Major","584748","Not Received","0.8","SaleOfExistingProperty"
-"Transfer","Alternative","Rental","OwnerOccupied","200000","North Toby","M2N 8F6","A1N","RowHousing","Major","584748","Not Received","0.6","Borrowed"
-"Purchase","Alternative","Standard","Rental","143837537","Port Marybelle","M2N 8P0","A1N","ApartmentHighRise","Major","584748","Not Received","0.8","BorrowedAgainstLiquidAssets"
-"Purchase","Alternative","NewToCanada","Rental","1456875664","Wayneview","M2N 4U2","T8L","ModularHomeSemiDetached","Major","584748","Not Received","0.65","Gift"

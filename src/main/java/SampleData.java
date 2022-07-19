@@ -89,30 +89,55 @@ public class SampleData {
         return varienceException;
     }
 
+    int[] provinceName;
     public String[] cityName(int number) {
-        String[] city = new String[number];
+        provinceName = new int[number];
+        String[][] cities = {{"Airdrie","Grande Prairie","Red Deer","Beaumont","Hanna","St. Albert","Bonnyville","Hinton","Spruce Grove","Brazeau","Irricana","Strathcona County","Breton"
+                ,"Lacombe","Strathmore","Calgary","Leduc","Sylvan Lake","Camrose","Lethbridge","Swan Hills","Canmore","McLennan","Taber","Didzbury","Medicine Hat","Turner Valley","Drayton Valley"
+                ,"Olds","Vermillion","Edmonton","Onoway","Wood Buffalo","Ft. Saskatchewan","Provost"},
+                {"Burnaby","Lumby","City of Port Moody","Cache Creek","Maple Ridge","Prince George","Castlegar","Merritt","Prince Rupert","Chemainus"
+                ,"Mission","Richmond","Chilliwack","Nanaimo","Saanich","Clearwater","Nelson","Sooke","Colwood","New Westminster","Sparwood","Coquitlam","North Cowichan"
+                ,"Surrey","Cranbrook","North Vancouver","Terrace","Dawson Creek","North Vancouver","Tumbler","Delta","Osoyoos","Vancouver","Fernie","Parksville"
+                ,"Vancouver","Invermere","Peace River","Vernon","Kamloops","Penticton","Victoria","Kaslo","Port Alberni","Whistler","Langley","Port Hardy"},
+                {"Birtle", "Flin Flon", "Swan River", "Brandon", "Snow Lake", "The Pas", "Cranberry Portage", "Steinbach", "Thompson", "Dauphin", "Stonewall", "Winnipeg"},
+                {"Cap-Pele", "Miramichi", "Saint John", "Fredericton", "Moncton", "Saint Stephen", "Grand Bay-Westfield", "Oromocto", "Shippagan", "Grand Falls", "Port Elgin", "Sussex", "Memramcook",
+                        "Sackville", "Tracadie-Sheila"},
+                {"Argentia", "Corner Brook", "Paradise", "Bishop's Falls", "Labrador City", "Portaux Basques", "Botwood", "Mount Pearl", "St. John's", "Brigus"},
+                {"Town of Hay River", "Town of Inuvik", "Yellowknife"},
+                {"Amherst", "Hants County", "Pictou", "Annapolis", "Inverness County", "Pictou County", "Argyle", "Kentville", "Queens", "Baddeck", "County of Kings", "Richmond", "Bridgewater", "Lunenburg",
+                 "Shelburne", "Cape Breton", "Lunenburg County", "Stellarton", "Chester", "Mahone Bay", "Truro", "Cumberland County", "New Glasgow", "Windsor", "East Hants", "New Minas", "Yarmouth", "Halifax", "Parrsboro"},
+                {"Ajax", "Halton", "Peterborough", "Atikokan", "Halton Hills", "Pickering", "Barrie", "Hamilton", "Port Bruce", "Belleville", "Hamilton-Wentworth", "Port Burwell", "Blandford-Blenheim", "Hearst",
+                    "Port Colborne", "Blind River", "Huntsville", "Port Hope", "Brampton", "Ingersoll", "Prince Edward", "Brant", "James", "Quinte West", "Brantford", "Kanata", "Renfrew", "Brock", "Kincardine",
+                    "Richmond Hill", "Brockville", "King", "Sarnia", "Burlington", "Kingston", "Sault Ste. Marie", "Caledon", "Kirkland Lake", "Scarborough", "Cambridge", "Kitchener", "Scugog", "Chatham-Kent", "Larder Lake",
+                    "Souix Lookout CoC Sioux Lookout", "Chesterville", "Leamington", "Smiths Falls", "Clarington", "Lennox-Addington", "South-West Oxford", "Cobourg", "Lincoln", "St. Catharines", "Cochrane", "Lindsay",
+                    "St. Thomas", "Collingwood", "London", "Stoney Creek", "Cornwall", "Loyalist Township", "Stratford", "Cumberland", "Markham", "Sudbury", "Deep River", "Metro Toronto", "Temagami", "Dundas",
+                    "Merrickville", "Thorold", "Durham", "Milton", "Thunder Bay", "Dymond", "Nepean", "Tillsonburg", "Ear Falls", "Newmarket", "Timmins", "East Gwillimbury", "Niagara", "Toronto", "East Zorra-Tavistock",
+                    "Niagara Falls", "Uxbridge", "Elgin", "Niagara-on-the-Lake", "Vaughan", "Elliot Lake", "North Bay", "Wainfleet", "Flamborough", "North Dorchester", "Wasaga Beach", "Fort Erie", "North Dumfries",
+                    "Waterloo", "Fort Frances", "North York", "Waterloo", "Gananoque", "Norwich", "Welland", "Georgina", "Oakville", "Wellesley", "Glanbrook", "Orangeville", "West Carleton", "Gloucester", "Orillia",
+                    "West Lincoln", "Goulbourn", "Osgoode", "Whitby", "Gravenhurst", "Oshawa", "Wilmot", "Grimsby", "Ottawa", "Windsor", "Guelph", "Ottawa-Carleton", "Woolwich", "Haldimand-Norfork", "Owen Sound", "York"},
+                {"Alberton", "Montague", "Stratford", "Charlottetown", "Souris", "Summerside", "Cornwall"},
+                {"Alma", "Fleurimont", "Longueuil", "Amos", "Gaspe", "Marieville", "Anjou", "Gatineau", "Mount Royal", "Aylmer", "Hull", "Montreal", "Beauport", "Joliette", "Montreal Region", "Bromptonville", "Jonquiere",
+                    "Montreal-Est", "Brosssard", "Lachine", "Quebec", "Chateauguay", "Lasalle", "Saint-Leonard", "Chicoutimi", "Laurentides", "Sherbrooke", "Coaticook", "LaSalle", "Sorel", "Coaticook", "Laval",
+                        "Thetford Mines", "Dorval", "Lennoxville", "Victoriaville", "Drummondville", "Levis"},
+                {"Avonlea", "Melfort", "Swift Current", "Colonsay", "Nipawin", "Tisdale", "Craik", "Prince Albert", "Unity", "Creighton", "Regina", "Weyburn", "Eastend", "Saskatoon", "Wynyard", "Esterhazy", "Shell Lake", "Yorkton", "Gravelbourg"},
+                {"Carcross","Whitehorse"} };
 
-        Locale locale = Locale.CANADA;
-        Faker faker = new Faker(locale);
-        System.out.println(faker.address().cityName());
+        String[] cityName = new String[number];
 
         for (int i = 0; i < number; i++) {
-            city[i] = faker.address().cityName();
+            int province = (int) (Math.random() * 11);
+            int city = (int) (Math.random() * cities[province].length);
+            provinceName[i] = province;
+            cityName[i] = cities[province][city];
         }
 
-        return city;
+        return cityName;
     }
 
-    public String[] provinceCode(int number) {
-        String[] city = new String[number];
-        Faker faker = new Faker();
-
-        for (int i = 0; i < number; i++) {
-            city[i] = faker.address().cityName();
-        }
-
-        return city;
-    }
+//    public String[] provinceCode(int number) {
+//        String[] provinceCode = new String[number];
+//
+//    }
 
     public String[] postalCode(int number) {
         Faker faker = new Faker();
@@ -214,15 +239,47 @@ public class SampleData {
     }
 
     public String[] creditScore(int number) {
-        String[] givenValues={"0","10","450","550","650","750"};
         String[] creditScore = new String[number];
 
         for (int i=0; i < number; i++){
-            int index = (int)(Math.random()*(givenValues.length-1));
-            creditScore[i] = givenValues[index];
+            index = (int) (Math.random() * 751);
+            creditScore[i] = String.valueOf(index);
         }
         return creditScore;
     }
+
+    public String[] primaryApplicantInd(int numbOfRecords) {
+        String[] givenValues = {"Qualified","Not Qualified"};
+
+        // The array size is determined by the number of Records requested
+        String[] primaryApplicantInd = new String[numbOfRecords];
+        for (int i = 0; i < numbOfRecords; i++) {
+            int index = (int) (Math.random() * (givenValues.length));
+            primaryApplicantInd [i] = givenValues[index];
+        }
+        return primaryApplicantInd;
+    }
+
+    public String[] grossDebtService(int numbOfRecords) {
+        //array to be returned
+        //the array size is determined by the number of Records requested
+        String[] grossDebtService = new String[numbOfRecords];
+        for (int i = 0; i < numbOfRecords; i++) {
+            grossDebtService[i] = (Math.random() * (60)) + "%";
+        }
+        return grossDebtService;
+    }
+
+    public String[] totalDebtService(int numbOfRecords) {
+        //array to be returned
+        //the array size is determined by the number of Records requested
+        String[] totalDebtService = new String[numbOfRecords];
+        for (int i = 0; i < numbOfRecords; i++) {
+            totalDebtService[i] = (Math.random() * (60)) + "%";
+        }
+        return totalDebtService;
+    }
+
     public String[] qualifiedIncomeInd(int number)
     {
         String[] qualifiedIncome = {"Qualified","Not Qualified"};
@@ -234,6 +291,17 @@ public class SampleData {
         }
 
         return qualifiedIncomes;
+    }
+
+    public String[] totalIncome(int number) {
+
+        String[] total = new String[number];
+
+        for (int i = 0; i < number; i++) {
+            int amount = ((int) (Math.random() * (Integer.MAX_VALUE - 90000))) + 90000;
+            total[i] = String.valueOf(amount);
+        }
+        return total;
     }
 
     public String[] residencyType(int number)
@@ -265,12 +333,17 @@ public class SampleData {
     public String[] previouslyInsure(int number,String[] transactionType,String[] productType)
     {
         String[] insure = {"Previously Insured","Not Previously Insured"};
-        String[] insurers= new String[number];
+        String[] insurance= new String[number];
 
         for (int i = 0; i < number; i++) {
-            if(transactionType[])
+            if(transactionType[i] == "Transfer" && productType[i] == "Prime") {
+                insurance[i] = "Previously Insured";
+            }
+            else {
+                insurance[i] = "Not Previously Insured";
+            }
         }
-        return insurers;
+        return insurance;
     }
 
     public String[] propertyOwnershipType(int number)

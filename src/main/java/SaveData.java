@@ -47,10 +47,13 @@ public class SaveData {
             String[] policyException = data.policyException(recordsNumber,loanAmount);
             String[] ltv = data.ltv(recordsNumber);
             String[] downPaymentSource = data.downPaymentSource(recordsNumber);
-            Stri
-
-            String[][] records = {transactionType,productType,programType,occupanctType,equityTakeOutAmount,varianceExceptionReceived,cityName,postalCode,fsa,dwellingType,approvedLendingAreas,loanAmount,policyException,ltv,downPaymentSource};
-            int row = 15, column = recordsNumber;
+            String[] creditScore = data.creditScore(recordsNumber);
+            String[] primaryApplicantInd = data.primaryApplicantInd(recordsNumber);
+            String[] grossDebtService = data.grossDebtService(recordsNumber);
+            String[] totalDebtService = data.totalDebtService(recordsNumber);
+            String[][] records = {transactionType,productType,programType,occupanctType,equityTakeOutAmount,varianceExceptionReceived,cityName,postalCode,fsa,dwellingType,approvedLendingAreas,loanAmount,
+                    policyException,ltv,downPaymentSource,creditScore,primaryApplicantInd,grossDebtService,totalDebtService};
+            int row = 19, column = recordsNumber;
             String[][] transpose = new String[column][row];
 
             for (int i = 0; i < row; i++) {
