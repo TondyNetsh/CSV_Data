@@ -38,7 +38,7 @@ public class SaveData {
             String[] equityTakeOutAmount = data.equityTakeOutAmount(recordsNumber,transactionType);
             String[] varianceExceptionReceived = data.varianceExceptionReceived(recordsNumber,equityTakeOutAmount);
             String[] cityName = data.cityName(recordsNumber);
-
+            String[] provinceCode = data.provinceCode(recordsNumber);
             String[] postalCode = data.postalCode(recordsNumber);
             String[] fsa = data.fsa(recordsNumber);
             String[] dwellingType = data.dwellingType(recordsNumber);
@@ -51,9 +51,22 @@ public class SaveData {
             String[] primaryApplicantInd = data.primaryApplicantInd(recordsNumber);
             String[] grossDebtService = data.grossDebtService(recordsNumber);
             String[] totalDebtService = data.totalDebtService(recordsNumber);
-            String[][] records = {transactionType,productType,programType,occupanctType,equityTakeOutAmount,varianceExceptionReceived,cityName,postalCode,fsa,dwellingType,approvedLendingAreas,loanAmount,
-                    policyException,ltv,downPaymentSource,creditScore,primaryApplicantInd,grossDebtService,totalDebtService};
-            int row = 19, column = recordsNumber;
+            String[] qualifiedIncomeInd = data.qualifiedIncomeInd(recordsNumber);
+            String[] totalIncome = data.totalIncome(recordsNumber);
+            String[] residencyType = data.residencyType(recordsNumber);
+            String[] areaName = data.areaName(recordsNumber);
+            String[] purchasePrice = data.purchasePrice(recordsNumber);
+            String[] amortazationTermsInYears = data.amortazationTermsInYears(recordsNumber);
+            String[] previouslyInsure = data.previouslyInsure(recordsNumber,transactionType,productType);
+            String[] propertyOwnershipType = data.propertyOwnershipType(recordsNumber);
+            String[] baseAmount = data.baseAmount(recordsNumber);
+
+
+            String[][] records = {transactionType,productType,programType,occupanctType,equityTakeOutAmount,varianceExceptionReceived,cityName,provinceCode,postalCode,fsa,dwellingType,
+                    approvedLendingAreas,loanAmount,policyException,ltv,downPaymentSource,creditScore,primaryApplicantInd,grossDebtService,totalDebtService,qualifiedIncomeInd,
+                    totalIncome,residencyType,areaName,purchasePrice,amortazationTermsInYears,previouslyInsure,propertyOwnershipType,baseAmount};
+            int row = 29, column = recordsNumber;
+
             String[][] transpose = new String[column][row];
 
             for (int i = 0; i < row; i++) {

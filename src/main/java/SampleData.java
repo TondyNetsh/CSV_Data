@@ -1,7 +1,3 @@
-import com.github.javafaker.Faker;
-
-import java.util.Locale;
-
 public class SampleData {
     int index;
     public String[] transactionType(int number) {
@@ -106,6 +102,7 @@ public class SampleData {
                 {"Town of Hay River", "Town of Inuvik", "Yellowknife"},
                 {"Amherst", "Hants County", "Pictou", "Annapolis", "Inverness County", "Pictou County", "Argyle", "Kentville", "Queens", "Baddeck", "County of Kings", "Richmond", "Bridgewater", "Lunenburg",
                  "Shelburne", "Cape Breton", "Lunenburg County", "Stellarton", "Chester", "Mahone Bay", "Truro", "Cumberland County", "New Glasgow", "Windsor", "East Hants", "New Minas", "Yarmouth", "Halifax", "Parrsboro"},
+                {"Iqaluit "},
                 {"Ajax", "Halton", "Peterborough", "Atikokan", "Halton Hills", "Pickering", "Barrie", "Hamilton", "Port Bruce", "Belleville", "Hamilton-Wentworth", "Port Burwell", "Blandford-Blenheim", "Hearst",
                     "Port Colborne", "Blind River", "Huntsville", "Port Hope", "Brampton", "Ingersoll", "Prince Edward", "Brant", "James", "Quinte West", "Brantford", "Kanata", "Renfrew", "Brock", "Kincardine",
                     "Richmond Hill", "Brockville", "King", "Sarnia", "Burlington", "Kingston", "Sault Ste. Marie", "Caledon", "Kirkland Lake", "Scarborough", "Cambridge", "Kitchener", "Scugog", "Chatham-Kent", "Larder Lake",
@@ -134,13 +131,18 @@ public class SampleData {
         return cityName;
     }
 
-//    public String[] provinceCode(int number) {
-//        String[] provinceCode = new String[number];
-//
-//    }
+    public String[] provinceCode(int number) {
+        String[] provinceCode = new String[number];
+        String[] province = {"AB","BC","MB","NB","NL","NT","NS","NU","ON","PE","QC","SK","YT"};
+        for (int i = 0; i < number; i++) {
+            provinceCode[i] = province[provinceName[i]];
+        }
+
+        return provinceCode;
+
+    }
 
     public String[] postalCode(int number) {
-        Faker faker = new Faker();
         String[] postalCode = {"M2N","T8L","J5R","A1N","K6V"};
         String[] code = new String[number];
 
@@ -265,7 +267,7 @@ public class SampleData {
         //the array size is determined by the number of Records requested
         String[] grossDebtService = new String[numbOfRecords];
         for (int i = 0; i < numbOfRecords; i++) {
-            grossDebtService[i] = (Math.random() * (60)) + "%";
+            grossDebtService[i] =(float) (Math.random() * (60)) + "%";
         }
         return grossDebtService;
     }
@@ -275,7 +277,7 @@ public class SampleData {
         //the array size is determined by the number of Records requested
         String[] totalDebtService = new String[numbOfRecords];
         for (int i = 0; i < numbOfRecords; i++) {
-            totalDebtService[i] = (Math.random() * (60)) + "%";
+            totalDebtService[i] = (float)(Math.random() * (60)) + "%";
         }
         return totalDebtService;
     }
@@ -330,6 +332,28 @@ public class SampleData {
         return area;
     }
 
+    // Business requirement not clear so purchase price is capped at 10 Million
+    public String[] purchasePrice(int number)
+    {
+        String[] purchasePrice= new String[number];
+
+        for (int i = 0; i < number; i++) {
+            purchasePrice[i] = String.valueOf ((float) (Math.random() * 10000000 ));
+        }
+        return purchasePrice;
+    }
+
+    //Business requirement not clear so paying off debt capped to 50 years
+    public String[] amortazationTermsInYears(int number)
+    {
+        String[] amortazationTermsInYears= new String[number];
+
+        for (int i = 0; i < number; i++) {
+            amortazationTermsInYears[i] = String.valueOf ((int) (Math.random() * 50 ));
+        }
+        return amortazationTermsInYears;
+    }
+
     public String[] previouslyInsure(int number,String[] transactionType,String[] productType)
     {
         String[] insure = {"Previously Insured","Not Previously Insured"};
@@ -356,5 +380,14 @@ public class SampleData {
             OwnershipTypes[i] = OwnershipType[index];
         }
         return OwnershipTypes;
+    }
+    public String[] baseAmount(int number)
+    {
+        String[] baseAmount= new String[number];
+
+        for (int i = 0; i < number; i++) {
+            baseAmount[i] = String.valueOf ((float)(Math.random() * 925000 ) + 50000);
+        }
+        return baseAmount;
     }
 }
