@@ -5,6 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+import static com.opencsv.CSVWriter.NO_QUOTE_CHARACTER;
+
 public class SaveData {
     public static void writeData(String filePath) {
         SampleData data = new SampleData();
@@ -15,7 +17,12 @@ public class SaveData {
             FileWriter outputfile = new FileWriter(file);
 
             // create CSVWriter object filewriter object as parameter
-            CSVWriter writer = new CSVWriter(outputfile);
+            //CSVWriter writer = new CSVWriter(outputfile);
+            CSVWriter writer = new CSVWriter(new FileWriter(filePath),
+                    CSVWriter.DEFAULT_SEPARATOR,
+                    CSVWriter.NO_QUOTE_CHARACTER,
+                    CSVWriter.DEFAULT_ESCAPE_CHARACTER,
+                    CSVWriter.RFC4180_LINE_END);
 
             // adding header to csv
             String[] header = { "transactionType","productType","programType","occupanctType","equityTakeOutAmount","varianceExceptionReceived","cityName",

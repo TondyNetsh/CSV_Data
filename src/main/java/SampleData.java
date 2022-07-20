@@ -192,7 +192,6 @@ public class SampleData {
     public String[] loanAmount(int number) {
         String[] loanAmount = new String[number];
         int amount = ((int) (Math.random()*(2500000 - 100000))) + 100000;
-        System.out.println(amount);
         for (int i = 0; i < number; i++) {
             loanAmount[i] = String.valueOf(amount);
         }
