@@ -191,10 +191,13 @@ public class SampleData {
 
     public String[] loanAmount(int number) {
         String[] loanAmount = new String[number];
-        int amount = ((int) (Math.random()*(2500000 - 100000))) + 100000;
+
         for (int i = 0; i < number; i++) {
+            int amount = (int) (Math.random() * 10000000);
             loanAmount[i] = String.valueOf(amount);
         }
+
+
         return loanAmount;
     }
 
@@ -250,7 +253,7 @@ public class SampleData {
     }
 
     public String[] primaryApplicantInd(int numbOfRecords) {
-        String[] givenValues = {"Qualified","Not Qualified"};
+        String[] givenValues = {"Primary","Not Primary"};
 
         // The array size is determined by the number of Records requested
         String[] primaryApplicantInd = new String[numbOfRecords];
@@ -371,7 +374,7 @@ public class SampleData {
 
     public String[] propertyOwnershipType(int number)
     {
-        String[] OwnershipType = {"Previously Insured","Not Previously Insured"};
+        String[] OwnershipType = {"Condominium","Freehold"};
         String[] OwnershipTypes= new String[number];
 
         for (int i = 0; i < number; i++) {
